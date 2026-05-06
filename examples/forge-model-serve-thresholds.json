@@ -1,0 +1,17 @@
+{
+  "repo": "forge-model-serve-probe",
+  "thresholds": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 2,
+    "drag": 4,
+    "ship": 162,
+    "watch": 111
+  },
+  "terms": [
+    "feature drift",
+    "window width",
+    "metric stability",
+    "explainability"
+  ]
+}

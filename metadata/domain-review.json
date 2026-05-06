@@ -1,0 +1,73 @@
+{
+  "repo": "forge-model-serve-probe",
+  "language": "Haskell",
+  "category": "ML utilities",
+  "goal": "Create a Haskell reference implementation for serve workflows, centered on incremental indexing, append-only fixtures, and checkpoint recovery checks.",
+  "review_model": {
+    "terms": [
+      "feature drift",
+      "window width",
+      "metric stability",
+      "explainability"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "feature drift",
+      "signal": 50,
+      "slack": 35,
+      "drag": 29,
+      "confidence": 55,
+      "score": 103,
+      "lane": "hold"
+    },
+    {
+      "name": "stress",
+      "focus": "window width",
+      "signal": 80,
+      "slack": 45,
+      "drag": 28,
+      "confidence": 60,
+      "score": 181,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "metric stability",
+      "signal": 81,
+      "slack": 54,
+      "drag": 11,
+      "confidence": 73,
+      "score": 256,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "explainability",
+      "signal": 79,
+      "slack": 50,
+      "drag": 13,
+      "confidence": 89,
+      "score": 258,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "feature drift",
+      "signal": 55,
+      "slack": 41,
+      "drag": 23,
+      "confidence": 56,
+      "score": 138,
+      "lane": "watch"
+    }
+  ]
+}
